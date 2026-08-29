@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+background-color:rgb(224, 192, 151) ;
+}
+.hot{
+    /* display: grid;
+    grid-template-rows:1fr 1fr; */
+}
+.g1{
+    background-image: url(./Untitled\ design1.png);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display:flex;
+}
+h1{
+    align-self: flex-end;
+}
+.cofee-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    /* grid-template-rows: 1fr 1fr; */
+    background-color: #2e160a;
+    padding: 0.2rem;
+    gap: 2px;
+}
+.item11{
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(224, 192, 151)  ;
+    justify-content: space-evenly;
+    height: 200px;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+.cofee-type button{
+    background: #2e160a;
+    color:rgb(224, 192, 151) ;
+    border-radius: 40px;
+}
+.cofee-type button:hover{
+    box-shadow: 0 0 15px #B85C38 ;
+}
+a{
+    color: #2e160a;
+}
+a:hover{
+    color: #B85C38;
+}
+.g2{
+    background-image: url(./Untitled\ design.png);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display:flex;
+}
