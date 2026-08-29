@@ -1,14 +1,8 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-// ================= CART =================
-
 const cartButton = document.querySelector(".btn-cart");
 const cartOverlay = document.getElementById("cartOverlay");
 const closeButton = document.getElementById("closeCart");
-
-
-// Open cart from index page
 
 if(cartButton && cartOverlay){
 
@@ -21,10 +15,6 @@ if(cartButton && cartOverlay){
     }
 
 }
-
-
-// Close cart
-
 if(closeButton && cartOverlay){
 
     closeButton.onclick = function(){
@@ -32,13 +22,7 @@ if(closeButton && cartOverlay){
         cartOverlay.style.display = "none";
 
     }
-
 }
-
-
-
-// ================= ADD PRODUCTS =================
-
 const addButtons = document.querySelectorAll(".add-btn");
 
 
@@ -50,28 +34,14 @@ addButtons.forEach(function(button){
         let name = this.dataset.name;
 
         let price = Number(this.dataset.price);
-
-
-
         cart.push({
 
             name:name,
             price:price
 
         });
-
-
-
-        // Save cart
-
         localStorage.setItem("cart", JSON.stringify(cart));
-
-
-
         showCart();
-
-
-
         if(cartOverlay){
 
             cartOverlay.style.display = "block";
@@ -83,12 +53,6 @@ addButtons.forEach(function(button){
 
 
 });
-
-
-
-
-// ================= SHOW CART =================
-
 function showCart(){
 
 
@@ -104,50 +68,24 @@ function showCart(){
         cartItems.innerHTML = "";
 
         let sum = 0;
-
-
-
         for(let i = 0; i < cart.length; i++){
-
-
             cartItems.innerHTML +=
-
-            `
             <div class="cart-item">
-
                 <p>
                 ${cart[i].name} - ${cart[i].price} JD
                 </p>
-
-
                 <button onclick="removeItem(${i})">
                 Remove
                 </button>
-
-
             </div>
-            `;
-
-
+            ;
 
             sum += cart[i].price;
-
-
         }
-
-
-
         total.innerHTML = sum;
-
-
     }
-
-
 }
-
-
-
-// ================= REMOVE =================
+//REMOVE 
 
 function removeItem(index){
 
